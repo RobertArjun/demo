@@ -1,0 +1,23 @@
+{
+  "lablesValues":{
+    "title": "Get Rates & Transit Times",
+    "sectionName": "Ship From / To",
+    "shipFrom": "From",
+    "shipFromCountry": "Country/Location *",
+    "shipFromZip": "Zip *" ,
+    "shipFromCity": "City *",
+    "shipTo": "To",
+    "shipToCountry": "Country/Location *",
+    "shipToZip": "Zip *" ,
+    "shipToCity": "City *",
+    "additionaltitle": "Additional Information",
+    "noPackages": "No. of Packages *",
+    "weight": "Weight",
+    "pickup":"Pickup/Dropoff *",
+    "shipdate": "Ship date *",
+    "packageIdentifical": "Are packages identical? *",
+    "isaccount":"Ship using a FedEx account number",
+    "submit": "Submit",
+    "cityInvalidError" : "Invalid City code, Please enter a valid City."
+  }
+}

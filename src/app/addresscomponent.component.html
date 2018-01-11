@@ -1,0 +1,131 @@
+  <!-- From Section Start -->
+<md-card class="card">
+  <h5 class="main-subsection-tiltle">{{title.shipFrom}}</h5>
+  <div class="form-group row">
+    <label class="col-sm-3 col-form-label outputlabel" [ngClass]="{'label-error' : isErrOrginCountry}">  {{title.shipFromCountry}}</label>
+    <div class="col-sm-9">
+      <select class="form-control" id="fromCountry"  [(ngModel)]="model.fromCountry" [ngClass]="{'input-error' : isErrOrginCountry}" (change)="CountryChange('from')">
+        <option value="0">Select</option>
+          <option *ngFor="let c of country" [value]="c.countryCode">{{c.countryName}}</option>
+      </select>
+      <div *ngIf="isErrOrginCountry" class="error-msg">{{fromCountryErrorMsg}}</div>
+  </div>
+</div>
+<div class="form-group row" *ngIf="isPostelAwareFromCountry == false" >
+  <label class="col-sm-3 col-form-label outputlabel" [ngClass]="{'label-error' : isErrOrginCity}">  {{title.shipFromCity}} </label>
+<div class="col-sm-9">
+  <input type="text" id="fromCity"  class="form-control" [ngClass]="{'input-error' : isErrOrginCity}" [(ngModel)]="model.fromCity" (keyup)="cityChange('from')">
+  <div *ngIf="isErrOrginCity" class="error-msg">{{fromCityErrorMsg}}</div>
+</div>
+  </div>
+  <div class="form-group row" *ngIf="isPostelAwareFromCountry == true">
+    <label class="col-sm-3 col-form-label outputlabel" [ngClass]="{'label-error' : isErrOrginZip}">{{title.shipFromZip}}</label>
+  <div class="col-sm-9">
+    <input type="text" id="fromZip"  class="form-control" [(ngModel)]="model.fromZip" (keyup)="postalChange('from')"  [ngClass]="{'input-error' : isErrOrginZip}">
+    <div *ngIf="isErrOrginZip" class="error-msg">{{fromZipErrorMsg}}</div>
+  </div>
+    </div>
+</md-card>
+  <!-- From Section End -->
+<hr>
+<!-- To Section Start -->
+<md-card class="card">
+    <h5 class="main-subsection-tiltle">{{title.shipTo}}</h5>
+<div class="form-group row">
+  <label class="col-sm-3 col-form-label outputlabel" [ngClass]="{'label-error' : isErrtoCountry}">  {{title.shipToCountry}} </label>
+  <div class="col-sm-9">
+    <select class="form-control" id="toCountry" [(ngModel)]="model.toCountry" [ngClass]="{'input-error' : isErrtoCountry}" (change)="CountryChange('to')">
+      <option value="0">Select</option>
+      <option *ngFor="let c of country" [value]="c.countryCode">{{c.countryName}}</option>
+    </select>
+    <div *ngIf="isErrtoCountry" class="error-msg">{{toCountryErrorMsg}}</div>
+</div>
+</div>
+<div class="form-group row" *ngIf="isPostelAwareToCountry == false">
+<label class="col-sm-3 col-form-label outputlabel" [ngClass]="{'label-error' : isErrtoCity}">  {{title.shipToCity}}</label>
+<div class="col-sm-9">
+<input type="text" id="toCity"  class="form-control" [(ngModel)]="model.toCity" (keyup)="cityChange('to')" [ngClass]="{'input-error' : isErrtoCity}">
+<div *ngIf="isErrtoCity" class="error-msg">{{toCityErrorMsg}}</div>
+</div>
+</div>
+<div class="form-group row" *ngIf="isPostelAwareToCountry == true">
+  <label class="col-sm-3 col-form-label outputlabel" [ngClass]="{'label-error' : isErrtoZip}">  {{title.shipToZip}}</label>
+<div class="col-sm-9">
+  <input type="text" id="toZip"  class="form-control" [(ngModel)]="model.toZip" [ngClass]="{'input-error' : isErrtoZip}" (keyup)="postalChange('to')">
+  <div *ngIf="isErrtoZip" class="error-msg">{{toZipErrorMsg}}</div>
+</div>
+  </div>
+</md-card>
+<!-- To Section Start -->
+<hr>
+<!-- AdditionalInfo Start-->
+<md-card class="card">
+    <h5 class="main-subsection-tiltle">{{title.additionaltitle}}</h5>
+    <div class="form-group row">
+<label class="col-sm-3 col-form-label outputlabel" [ngClass]="{'label-error' : isErrorpkg}">{{title.noPackages}} </label>
+<div class="col-sm-9">
+<input type="text" id="package"  class="form-control"  [(ngModel)]="model.packageNo" (keyup)="packageChange()" [ngClass]="{'input-error' : isErrorpkg}">
+<div *ngIf="isErrorpkg" class="error-msg">{{pkgErrorMsg}}</div>
+</div>
+    </div>
+    <div class="form-group row" *ngIf="ispackageIdentifical" >
+<label class="col-sm-3 col-form-label outputlabel"> {{title.packageIdentifical}} </label>
+<div class="col-sm-9">
+  <md-radio-group  [(ngModel)]="model.packageIdentifical" (change)="packageNoChange()">
+  <md-radio-button value="1"><span class="outputlabel">Yes</span></md-radio-button>
+  <md-radio-button value="0"><span class="outputlabel">No</span></md-radio-button>
+</md-radio-group>
+</div>
+    </div>
+    <div class="form-group row" *ngIf="isWeight || model.packageIdentifical == 1" >
+<label class="col-sm-3 col-form-label outputlabel" [ngClass]="{'label-error' : isErrorWeight}">{{title.weight}}</label>
+<div class="col-sm-7">
+<input type="text" id="weight"  class="form-control"  [(ngModel)]="model.weight" (keyup)="weightChange()" [ngClass]="{'input-error' : isErrorWeight}">
+<div *ngIf="isErrorWeight" class="error-msg">{{weightErrorMsg}}</div>
+</div>
+<div class="col-sm-2">
+<select  id="weighttype"  class="form-control"  [(ngModel)]="model.weightType">
+  <option value="lbs">LBS</option>
+  <option value="kgs">KGS</option>
+</select>
+  </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label"></label>
+      <div class="col-sm-9">
+
+        <md-checkbox type="checkbox" id="fedexacno"  [(ngModel)]="model.isAccountNumber"> <span class="outputlabel">{{title.isaccount}}</span>
+    </md-checkbox>
+      </div>
+    </div>
+    <div class="form-group row">
+    <label class="col-sm-3 col-form-label outputlabel">  {{title.pickup}}</label>
+    <div class="col-sm-9">
+    <select type="text" id="pickup"  class="form-control"  [(ngModel)]="model.pickupType" >
+      <option value="SP">Schedule a pickup</option>
+      <option value="UASP">Use an already scheduled pickup</option>
+      <option value="DFL">Drop off at FedEx location</option>
+    </select>
+      </div>
+    </div>
+    <div class="form-group row">
+    <label class="col-sm-3 col-form-label outputlabel">  {{title.shipdate}}</label>
+    <div class="col-sm-9">
+      <md-input-container>
+        <input mdInput [mdDatepicker]="myDatepicker" [min]="minShipDate" [(ngModel)]="model.defaultShipDate">
+        <button mdSuffix [mdDatepickerToggle]="myDatepicker"></button>
+      </md-input-container>
+      <md-datepicker #myDatepicker></md-datepicker>
+      </div>
+    </div>
+  </md-card>
+<!-- AdditionalInfo End-->
+<hr>
+<md-card class="card">
+  <div class="form-group row">
+    <div class="col-sm-12"><span class="float-right">
+    <button md-raised-button color="primary" (click)="openDialog()">{{title.submit}}</button>
+  </span>
+  </div>
+</div>
+</md-card>

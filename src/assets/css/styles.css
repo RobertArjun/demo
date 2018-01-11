@@ -1,0 +1,75 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+hr {
+    margin-top: -1rem;
+  }
+
+.input-error{
+  border-bottom-color: red !important;
+  border-bottom-width: 2px;
+}
+
+.input-success{
+  border-bottom-color: green !important;
+  border-bottom-width: 2px;
+}
+
+.label-error{
+  color: red !important;
+}
+
+.main-tiltle{
+  font-size: 18px !important;
+}
+
+.main-section-tiltle{
+  color: #660099;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.main-subsection-tiltle{
+  color: #660099;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.outputlabel{
+  font-size: 11px !important;
+}
+
+.card{
+  padding: 10px !important;
+}
+.form-control{
+  font-size: 11px !important;
+}
+.mat-input-element{
+  font-size: 11px !important;
+}
+.mat-radio-outer-circle{
+  height: 15px !important;
+  width: 15px !important;
+}
+.mat-radio-inner-circle{
+  height: 15px !important;
+  width: 15px !important;
+}
+.mat-radio-container{
+  height: 15px !important;
+  width: 15px !important;
+}
+.mat-checkbox-inner-container{
+  height: 15px !important;
+  width: 15px !important;
+}
+.error-msg{
+  color: red;
+  font-size: 11px;
+}

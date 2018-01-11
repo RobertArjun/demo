@@ -1,0 +1,30 @@
+{
+  "output":{
+    "isWeight":true,
+    "ispackageIdentifical" : false,
+    "isPostelAwareFromCountry": true,
+    "isPostelAwareToCountry":true,
+    "isErrorpkg":false,
+    "isErrorWeight":false,
+    "isErrOrginCountry":false,
+    "isErrtoCountry":false,
+    "isErrOrginZip" : false,
+    "isErrOrginCity" : false,
+    "isErrtoZip" : false,
+    "isErrtoCity" : false,
+    "fromCountryErrorMsg" : "",
+    "fromZipErrorMsg" : "",
+    "fromCityErrorMsg" : "",
+    "toCountryErrorMsg" : "",
+    "toZipErrorMsg" : "",
+    "toCityErrorMsg" : "",
+    "pkgErrorMsg" : "",
+    "weightErrorMsg" : "",
+    "postalRequiredError" : "Please enter a zip/postal code. It is required.",
+    "postalMinimumLenghtError" : "Zip/postal code must have at least 3 characters.",
+    "postalInvalidError" : "Invalid zip/postal code, Please enter a valid zip/postal code.",
+    "cityRequiredError" : "Please enter a City. It is required.",
+    "cityMinimumLenghtError" : "City must have at least 3 characters.",
+    "cityInvalidError" : "Invalid City code, Please enter a valid City."
+  }
+}
