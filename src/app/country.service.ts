@@ -7,7 +7,6 @@ import 'rxjs/add/observable/throw';
 
 @Injectable()
 export class CountryService{
- //private _url: string ="https://wwwdrt.idev.fedex.com/commonDataCal/v2/country/";
 private _url: string ="src/app/country_resource.json"
  constructor (private _http: Http){}
 
