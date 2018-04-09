@@ -58,68 +58,6 @@
 </md-card>
 <!-- To Section Start -->
 <hr>
-<!-- AdditionalInfo Start-->
-<md-card class="card">
-    <h5 class="main-subsection-tiltle">{{title.additionaltitle}}</h5>
-    <div class="form-group row">
-<label class="col-sm-3 col-form-label outputlabel" [ngClass]="{'label-error' : isErrorpkg}">{{title.noPackages}} </label>
-<div class="col-sm-9">
-<input type="text" id="package"  class="form-control"  [(ngModel)]="model.packageNo" (keyup)="packageChange()" [ngClass]="{'input-error' : isErrorpkg}">
-<div *ngIf="isErrorpkg" class="error-msg">{{pkgErrorMsg}}</div>
-</div>
-    </div>
-    <div class="form-group row" *ngIf="ispackageIdentifical" >
-<label class="col-sm-3 col-form-label outputlabel"> {{title.packageIdentifical}} </label>
-<div class="col-sm-9">
-  <md-radio-group  [(ngModel)]="model.packageIdentifical" (change)="packageNoChange()">
-  <md-radio-button value="1"><span class="outputlabel">Yes</span></md-radio-button>
-  <md-radio-button value="0"><span class="outputlabel">No</span></md-radio-button>
-</md-radio-group>
-</div>
-    </div>
-    <div class="form-group row" *ngIf="isWeight || model.packageIdentifical == 1" >
-<label class="col-sm-3 col-form-label outputlabel" [ngClass]="{'label-error' : isErrorWeight}">{{title.weight}}</label>
-<div class="col-sm-7">
-<input type="text" id="weight"  class="form-control"  [(ngModel)]="model.weight" (keyup)="weightChange()" [ngClass]="{'input-error' : isErrorWeight}">
-<div *ngIf="isErrorWeight" class="error-msg">{{weightErrorMsg}}</div>
-</div>
-<div class="col-sm-2">
-<select  id="weighttype"  class="form-control"  [(ngModel)]="model.weightType">
-  <option value="lbs">LBS</option>
-  <option value="kgs">KGS</option>
-</select>
-  </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-sm-3 col-form-label"></label>
-      <div class="col-sm-9">
-
-        <md-checkbox type="checkbox" id="fedexacno"  [(ngModel)]="model.isAccountNumber"> <span class="outputlabel">{{title.isaccount}}</span>
-    </md-checkbox>
-      </div>
-    </div>
-    <div class="form-group row">
-    <label class="col-sm-3 col-form-label outputlabel">  {{title.pickup}}</label>
-    <div class="col-sm-9">
-    <select type="text" id="pickup"  class="form-control"  [(ngModel)]="model.pickupType" >
-      <option value="SP">Schedule a pickup</option>
-      <option value="UASP">Use an already scheduled pickup</option>
-      <option value="DFL">Drop off at FedEx location</option>
-    </select>
-      </div>
-    </div>
-    <div class="form-group row">
-    <label class="col-sm-3 col-form-label outputlabel">  {{title.shipdate}}</label>
-    <div class="col-sm-9">
-      <md-input-container>
-        <input mdInput [mdDatepicker]="myDatepicker" [min]="minShipDate" [(ngModel)]="model.defaultShipDate">
-        <button mdSuffix [mdDatepickerToggle]="myDatepicker"></button>
-      </md-input-container>
-      <md-datepicker #myDatepicker></md-datepicker>
-      </div>
-    </div>
-  </md-card>
-<!-- AdditionalInfo End-->
 <hr>
 <md-card class="card">
   <div class="form-group row">
