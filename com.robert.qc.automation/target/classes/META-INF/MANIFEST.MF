@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: com.robert.qc.automation
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: prince
+Implementation-Vendor-Id: com.qc.automation
+Build-Jdk: 1.8.0_171
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/com.robert.qc.automation
+Created-By: Maven Integration for Eclipse
+
